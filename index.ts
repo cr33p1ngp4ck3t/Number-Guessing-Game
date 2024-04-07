@@ -1,8 +1,16 @@
 #! /usr/bin/env node
 import inquirer from "inquirer"
-const guess = await inquirer.prompt([{message:"Enter a number Between 1-10: ",type:"number",name:"userInp"}])
+import chalk from "chalk"
+console.log(chalk.bold(`You got ${chalk.bgRed(5)} Attempts\n`))
 const randInt:number = (Math.floor(Math.random()*10)+1)
-if (guess.userInp=== randInt){
-    console.log("==> You Guessed The Correct Number!")
+for(let i=5;i>=1;i--){
+    const guess = await inquirer.prompt([{message:"Enter a number Between 1-10: ",type:"number",name:"userInp"}])
+    if (guess.userInp !== randInt){
+            console.log(`==> ${chalk.bgBlue('Nope')} \n\tYou got ${chalk.bgRed(i-1+' Attempts')} left!!\n`)
+
+        }
+    else {console.log(`==> You Guessed The ${chalk.bold.bgGreen('Correct')} Number After ${5-i} Attempts!`)
+    break
+    }
+    
 }
-else console.log(`==> Nope. The Correct Number is: ${randInt}`)
