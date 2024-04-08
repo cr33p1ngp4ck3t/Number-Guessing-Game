@@ -9,7 +9,7 @@ for (let i = 5; i >= 1; i--) {
         console.log(`==> ${chalk.bgBlue('Nope')} \n\tYou got ${chalk.bgRed(i - 1 + ' Attempts')} left!!\n`);
     }
     else {
-        console.log(`==> You Guessed The ${chalk.bold.bgGreen('Correct')} Number After ${5 - i} Attempts!`);
+        console.log(chalk.bold(`==> You Guessed The ${chalk.bgGreen('Correct')} Number After ${chalk.bgRed(5 - i + ' Attempts!')}`));
         break;
     }
 }

@@ -1,6 +1,6 @@
 {
   "name": "cp-number-guessing",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "Creating a Number Guessing with Typescript, Node.js and Inquirer (Will include more pkgs later IA)",
   "main": "index.js",
   "type": "module",
